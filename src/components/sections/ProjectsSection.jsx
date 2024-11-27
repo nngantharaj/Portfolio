@@ -11,7 +11,7 @@ const projects = [
     image: "/Valayal.png",
     technologies: ["Angular", "Json-server"],
     github: "#",
-    live: "#"
+    live: "https://valayal.vercel.app"
   },
   {
     title: "Cable and Internet Service Provider Web Application",
