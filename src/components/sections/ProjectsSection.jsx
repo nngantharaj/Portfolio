@@ -2,16 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Github, ExternalLink } from 'lucide-react';
-import skcImage from "../../assets/skc.png";
-import ValayalImage from "../../assets/Valayal.png";
-import PortfolioImage from "../../assets/Portfolio.png";
-
 
 const projects = [
   {
     title: "E-Commerce Platform for a Bangle Store",
     description: "The project involved creating a full-stack E-commerce website where users can browse products, add them to the cart, and proceed with online payment. Implemented features like user authentication, product management, and order tracking.",
-    image: ValayalImage,
+    image: "/Valayal.png",
     technologies: ["Angular", "Json-server"],
     github: "#",
     live: "#"
@@ -19,7 +15,7 @@ const projects = [
   {
     title: "Cable and Internet Service Provider Web Application",
     description: " Built a full-stack web application with separate user and admin interfaces. The user interface allows customers to explore plans, subscribe to services, and manage their accounts. The admin interface includes features for managing users, plans, and tracking subscriptions. ",
-    image: skcImage,
+    image: "/sKc.png",
     technologies: ["React", "Node.js", "Express.js", "MongoDB"],
     github: "#",
     live: "https://skc-f7rm.onrender.com/"
@@ -27,7 +23,7 @@ const projects = [
   {
     title: "Portfolio Website",
     description: "Modern portfolio website with animations and responsive design",
-    image: PortfolioImage,
+    image: "/Portfolio.png",
     technologies: ["React", "Tailwind CSS", "Framer Motion"],
     github: "#",
     live: "#"

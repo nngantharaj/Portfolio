@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import Image1 from "../../assets/1.jpg";
 
 const AboutSection = () => {
   const [ref, inView] = useInView({
@@ -37,7 +36,7 @@ const AboutSection = () => {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden">
                 <img 
-                  src={Image1}
+                  src="/1.jpg"
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />
