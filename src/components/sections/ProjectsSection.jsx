@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Github, ExternalLink } from 'lucide-react';
+import { RiGitRepositoryPrivateFill } from "react-icons/ri";
+
 
 const projects = [
   {
@@ -17,7 +19,6 @@ const projects = [
     description: " Built a full-stack web application with separate user and admin interfaces. The user interface allows customers to explore plans, subscribe to services, and manage their accounts. The admin interface includes features for managing users, plans, and tracking subscriptions. ",
     image: "/sKc.png",
     technologies: ["React", "Node.js", "Express.js", "MongoDB"],
-    github: "#",
     live: "https://skc-f7rm.onrender.com/"
   },
   {
@@ -25,8 +26,8 @@ const projects = [
     description: "Modern portfolio website with animations and responsive design",
     image: "/Portfolio.png",
     technologies: ["React", "Tailwind CSS", "Framer Motion"],
-    github: "#",
-    live: "#"
+    github: "https://github.com/nngantharaj/Portfolio",
+    live: "https://nngantharaj.vercel.app/"
   }
 ];
 
@@ -80,14 +81,18 @@ const ProjectsSection = () => {
                   </div>
                   
                   <div className="flex gap-4">
-                    <a 
-                      href={project.github}
-                      className="text-gray-300 hover:text-white transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github size={20} />
-                    </a>
+                    {project.github && project.github !== "#" ? (
+                      <a
+                        href={project.github}
+                        className="text-gray-300 hover:text-white transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github size={20} />
+                      </a>
+                    ) : (
+                      <span className="flex items-center text-gray-500 italic gap-1">Source Code <RiGitRepositoryPrivateFill /> </span>
+                    )}
                     <a 
                       href={project.live}
                       className="text-gray-300 hover:text-white transition-colors"
