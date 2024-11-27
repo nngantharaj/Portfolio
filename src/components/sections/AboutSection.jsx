@@ -31,6 +31,16 @@ const AboutSection = () => {
                 When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
                 or sharing my knowledge through technical writing and mentoring.
               </p>
+              {/* Button to view PDF Resume */}
+              <a
+                href="/Resume.pdf"  // Replace with the actual path to your PDF
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="mt-6 bg-blue-500 text-white px-8 py-3 rounded-full hover:bg-blue-600 transition-colors">
+                  View My Resume
+                </button>
+              </a>
             </div>
             
             <div className="relative">
