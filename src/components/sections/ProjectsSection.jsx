@@ -1,0 +1,114 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { Github, ExternalLink } from 'lucide-react';
+import skcImage from "../../assets/skc.png";
+import ValayalImage from "../../assets/Valayal.png";
+import PortfolioImage from "../../assets/Portfolio.png";
+
+
+const projects = [
+  {
+    title: "E-Commerce Platform for a Bangle Store",
+    description: "The project involved creating a full-stack E-commerce website where users can browse products, add them to the cart, and proceed with online payment. Implemented features like user authentication, product management, and order tracking.",
+    image: ValayalImage,
+    technologies: ["Angular", "Json-server"],
+    github: "#",
+    live: "#"
+  },
+  {
+    title: "Cable and Internet Service Provider Web Application",
+    description: " Built a full-stack web application with separate user and admin interfaces. The user interface allows customers to explore plans, subscribe to services, and manage their accounts. The admin interface includes features for managing users, plans, and tracking subscriptions. ",
+    image: skcImage,
+    technologies: ["React", "Node.js", "Express.js", "MongoDB"],
+    github: "#",
+    live: "https://skc-f7rm.onrender.com/"
+  },
+  {
+    title: "Portfolio Website",
+    description: "Modern portfolio website with animations and responsive design",
+    image: PortfolioImage,
+    technologies: ["React", "Tailwind CSS", "Framer Motion"],
+    github: "#",
+    live: "#"
+  }
+];
+
+const ProjectsSection = () => {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  return (
+    <section id="projects" className="py-20 bg-gray-800">
+      <div className="container mx-auto px-4">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Projects</h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="bg-gray-900 rounded-xl overflow-hidden"
+              >
+                <div className="aspect-video relative overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+                  <p className="text-gray-300 mb-4">{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech) => (
+                      <span 
+                        key={tech}
+                        className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <div className="flex gap-4">
+                    <a 
+                      href={project.github}
+                      className="text-gray-300 hover:text-white transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github size={20} />
+                    </a>
+                    <a 
+                      href={project.live}
+                      className="text-gray-300 hover:text-white transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink size={20} />
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default ProjectsSection;
