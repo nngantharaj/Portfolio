@@ -4,7 +4,6 @@ import { useInView } from 'react-intersection-observer';
 import { Github, ExternalLink } from 'lucide-react';
 import { RiGitRepositoryPrivateFill } from "react-icons/ri";
 
-
 const projects = [
   {
     title: "E-Commerce Platform for a Bangle Store",
@@ -19,6 +18,7 @@ const projects = [
     description: " Built a full-stack web application with separate user and admin interfaces. The user interface allows customers to explore plans, subscribe to services, and manage their accounts. The admin interface includes features for managing users, plans, and tracking subscriptions. ",
     image: "/sKc.png",
     technologies: ["React", "Node.js", "Express.js", "MongoDB"],
+    github: "#",
     live: "https://skc-f7rm.onrender.com/"
   },
   {
