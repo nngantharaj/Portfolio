@@ -38,7 +38,10 @@ const ProjectsSection = () => {
   });
 
   return (
-    <section id="projects" className="py-20 bg-gray-800">
+    <section
+      id="projects"
+      className="py-20 bg-white dark:bg-gray-800 transition-colors duration-300"
+    >
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -46,8 +49,12 @@ const ProjectsSection = () => {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">Projects</h2>
-          
+          <h2
+            className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center"
+          >
+            Projects
+          </h2>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.div
@@ -55,47 +62,61 @@ const ProjectsSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="bg-gray-900 rounded-xl overflow-hidden"
+                className="bg-gray-100 dark:bg-gray-900 rounded-xl overflow-hidden shadow-md transition-colors"
               >
+                {/* Project Image */}
                 <div className="aspect-video relative overflow-hidden">
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                   />
                 </div>
-                
+
+                {/* Project Details */}
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
-                  <p className="text-gray-300 mb-4">{project.description}</p>
-                  
+                  <h3
+                    className="text-xl font-semibold text-gray-900 dark:text-white mb-2"
+                  >
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    {project.description}
+                  </p>
+
+                  {/* Technologies */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech) => (
-                      <span 
+                      <span
                         key={tech}
-                        className="px-3 py-1 bg-blue-500 text-white text-sm rounded-full"
+                        className="px-3 py-1 bg-blue-600 dark:bg-blue-500 text-white text-sm rounded-full"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-                  
+
+                  {/* Links */}
                   <div className="flex gap-4">
                     {project.github && project.github !== "#" ? (
                       <a
                         href={project.github}
-                        className="text-gray-300 hover:text-white transition-colors"
+                        className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <Github size={20} />
                       </a>
                     ) : (
-                      <span className="flex items-center text-gray-500 italic gap-1">Source Code <RiGitRepositoryPrivateFill /> </span>
+                      <span
+                        className="flex items-center text-gray-400 dark:text-gray-500 italic gap-1"
+                      >
+                        Source Code <RiGitRepositoryPrivateFill />
+                      </span>
                     )}
-                    <a 
+                    <a
                       href={project.live}
-                      className="text-gray-300 hover:text-white transition-colors"
+                      className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

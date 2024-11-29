@@ -20,7 +20,10 @@ const SkillsSection = () => {
   });
 
   return (
-    <section id="skills" className="py-20 bg-gray-800">
+    <section 
+      id="skills" 
+      className="py-20 bg-white dark:bg-gray-800 transition-colors duration-300"
+    >
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -28,7 +31,11 @@ const SkillsSection = () => {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">Skills</h2>
+          <h2 
+            className="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center"
+          >
+            Skills
+          </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {skills.map((skillGroup, index) => (
@@ -37,12 +44,19 @@ const SkillsSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="bg-gray-900 p-6 rounded-xl"
+                className="bg-gray-100 dark:bg-gray-900 p-6 rounded-xl shadow-md transition-colors"
               >
-                <h3 className="text-xl font-semibold text-blue-400 mb-4">{skillGroup.category}</h3>
+                <h3 
+                  className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-4"
+                >
+                  {skillGroup.category}
+                </h3>
                 <ul className="space-y-2">
                   {skillGroup.items.map((skill, idx) => (
-                    <li key={idx} className="text-gray-300 flex items-center">
+                    <li 
+                      key={idx} 
+                      className="text-gray-700 dark:text-gray-300 flex items-center"
+                    >
                       <span className="mr-2 text-xl">{skill.icon}</span>
                       {skill.name}
                     </li>
