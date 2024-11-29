@@ -8,6 +8,9 @@ import ProjectsSection from './components/sections/ProjectsSection.jsx';
 import ExperienceSection from './components/sections/ExperienceSection.jsx';
 import Footer from './components/Footer.jsx';
 import { Analytics } from "@vercel/analytics/react"
+import { injectSpeedInsights } from "@vercel/speed-insights/react";
+
+injectSpeedInsights();
 
 function App() {
   return (
