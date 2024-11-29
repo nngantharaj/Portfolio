@@ -7,11 +7,13 @@ import EducationSection from './components/sections/EducationSection.jsx';
 import ProjectsSection from './components/sections/ProjectsSection.jsx';
 import ExperienceSection from './components/sections/ExperienceSection.jsx';
 import Footer from './components/Footer.jsx';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
     <div className="bg-gray-900">
       <Header />
+      <Analytics />
       <main className="pt-16">
         <IntroSection />
         <AboutSection />
