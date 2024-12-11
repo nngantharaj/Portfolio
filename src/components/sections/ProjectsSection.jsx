@@ -19,7 +19,7 @@ const projects = [
     image: "/sKc.png",
     technologies: ["React", "Node.js", "Express.js", "MongoDB"],
     github: "#",
-    live: "https://skc-f7rm.onrender.com/"
+    live: "https://srikumarancables.vercel.app/"
   },
   {
     title: "Portfolio Website",
