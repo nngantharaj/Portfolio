@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Sun, Moon } from 'lucide-react';
+import { ChevronDown, Sun, Moon, Mail, Phone, X } from 'lucide-react'; // Import icons
+import { FaWhatsapp } from "react-icons/fa";
 
 const IntroSection = () => {
   const [theme, setTheme] = useState(
@@ -8,6 +9,7 @@ const IntroSection = () => {
       ? 'dark'
       : 'light'
   );
+  const [showIcons, setShowIcons] = useState(false); // State to control icon visibility
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -21,6 +23,15 @@ const IntroSection = () => {
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+
+  const handleContactClick = () => {
+    setShowIcons(true); // Trigger icons to appear with animation
+  };
+
+  const handleCloseIcons = () => {
+    // Close the icons and show the "Contact Me" button after animation is complete
+    setShowIcons(false);
   };
 
   return (
@@ -71,7 +82,7 @@ const IntroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
-          className="space-x-4"
+          className="space-x-4 flex justify-center items-center"
         >
           {/* Projects Button */}
           <a href="#projects">
@@ -80,15 +91,77 @@ const IntroSection = () => {
             </button>
           </a>
 
-          {/* Contact Me Button */}
-          <a
-            href="mailto:nngantharaj@gmail.com"
-            className="text-gray-800 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-          >
-            <button className="border-2 border-gray-800 dark:border-white text-gray-800 dark:text-white px-8 py-3 rounded-full hover:bg-gray-800 dark:hover:bg-white hover:text-white dark:hover:text-gray-900 transition-colors">
+          {/* Show icons or contact button based on state */}
+          {!showIcons && (
+            <button
+              onClick={handleContactClick}
+              className="border-2 border-gray-800 dark:border-white text-gray-800 dark:text-white px-8 py-3 rounded-full hover:bg-gray-800 dark:hover:bg-white hover:text-white dark:hover:text-gray-900 transition-colors"
+            >
               Contact Me
             </button>
-          </a>
+          )}
+
+          {/* Social Icons - Appearing with a bounce animation */}
+          {showIcons && (
+            <motion.div
+              className="flex items-center space-x-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 0.2, type: 'spring', stiffness: 150 }}
+            >
+              {/* Email Icon */}
+              <motion.div
+                className="flex justify-center"
+                initial={{ opacity: 0, x: -20 }}  // From left (x-axis)
+                animate={{ opacity: 1, x: 0 }}  // Move to original position (x-axis)
+                exit={{ opacity: 0, x: -20 }} // Reverse animation (move out)
+                transition={{ delay: 0.2, type: 'spring', stiffness: 150 }}
+              >
+                <a href="mailto:nngantharaj@gmail.com" target="_blank" rel="noopener noreferrer">
+                  <Mail className="w-8 h-8 text-gray-800 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300" />
+                </a>
+              </motion.div>
+
+              {/* WhatsApp Icon */}
+              <motion.div
+                className="flex justify-center"
+                initial={{ opacity: 0, x: -20 }}  // From left (x-axis)
+                animate={{ opacity: 1, x: 0 }}  // Move to original position (x-axis)
+                exit={{ opacity: 0, x: -20 }} // Reverse animation (move out)
+                transition={{ delay: 0.4, type: 'spring', stiffness: 150 }}
+              >
+                <a href="https://wa.me/9688555079" target="_blank" rel="noopener noreferrer">
+                  <FaWhatsapp className="w-8 h-8 text-gray-800 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300" />
+                </a>
+              </motion.div>
+
+              {/* Phone Icon */}
+              <motion.div
+                className="flex justify-center"
+                initial={{ opacity: 0, x: -20 }}  // From left (x-axis)
+                animate={{ opacity: 1, x: 0 }}  // Move to original position (x-axis)
+                exit={{ opacity: 0, x: -20 }} // Reverse animation (move out)
+                transition={{ delay: 0.6, type: 'spring', stiffness: 150 }}
+              >
+                <a href="tel:+919688555079" target="_blank" rel="noopener noreferrer">
+                  <Phone className="w-8 h-8 text-gray-800 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300" />
+                </a>
+              </motion.div>
+
+              {/* Close Icon */}
+              <motion.div
+                className="flex justify-center"
+                onClick={handleCloseIcons}
+                initial={{ opacity: 0, x: -20 }}  // From left (x-axis)
+                animate={{ opacity: 1, x: 0 }}  // Move to original position (x-axis)
+                exit={{ opacity: 0, x: -20 }} // Reverse animation (move out)
+                transition={{ delay: 0.8, type: 'spring', stiffness: 150 }}
+              >
+                <X  className="w-4 h-4 text-gray-800 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300" />
+              </motion.div>
+            </motion.div>
+          )}
         </motion.div>
       </motion.div>
 
