@@ -6,25 +6,56 @@ import { RiGitRepositoryPrivateFill } from "react-icons/ri";
 
 const projects = [
   {
-    title: "E-Commerce Platform for a Bangle Store",
-    description: "The project involved creating a full-stack E-commerce website where users can browse products, add them to the cart, and proceed with online payment. Implemented features like user authentication, product management, and order tracking.",
     image: "/Valayal.png",
+    title: "E-Commerce Platform for a Bangle Store",
+    description: `
+      The project involved creating a MEAN-stack E-commerce website where users can browse products, add them to the cart, 
+      and proceed with online payment. Implemented features like user authentication, product management, and order tracking.`,
+    note: `
+      <strong>Note:</strong>
+      For the best viewing experience, we recommend accessing this project on a desktop or laptop. The design and layout are 
+      currently not optimized for mobile screens, which may cause misalignment and affect the overall appearance.`,
     technologies: ["Angular", "Json-server"],
     github: "#",
     live: "https://valayal.vercel.app"
   },
   {
-    title: "Cable and Internet Service Provider Web Application",
-    description: " Built a full-stack web application with separate user and admin interfaces. The user interface allows customers to explore plans, subscribe to services, and manage their accounts. The admin interface includes features for managing users, plans, and tracking subscriptions. ",
     image: "/sKc.png",
+    title: "Cable and Internet Service Provider Web Application",
+    description: `
+      Built a MERN-stack web application with separate user and admin interfaces. The user interface allows customers 
+      to explore plans, subscribe to services, and manage their accounts. The admin interface includes features for managing 
+      users, plans, and tracking subscriptions.`,
+    note: `
+      <strong>Note:</strong> Login Credentials <br><br>
+      <div style="display: flex; max-width: 330px">
+        <div style="flex: 1;">
+          Admin Credentials:
+          <ul class="list-disc pl-5">
+            <li>Username: admin</li>
+            <li>Password: root</li>
+          </ul>
+        </div>
+        <div style="flex: 1;">
+          User Credentials:
+          <ul class="list-disc pl-5">
+            <li>Username: 3102564755</li>
+            <li>Password: 3102564755</li>
+          </ul>
+        </div>
+      </div><br>
+      <strong>Important Note:</strong><br>
+      Do not change the user's password or STB Number in the User or Admin panel to avoid login issues for future users.
+    `,
     technologies: ["React", "Node.js", "Express.js", "MongoDB"],
     github: "#",
     live: "https://srikumarancables.vercel.app/"
   },
   {
+    image: "/Portfolio.png",
     title: "Portfolio Website",
     description: "Modern portfolio website with animations and responsive design",
-    image: "/Portfolio.png",
+    note: "#",
     technologies: ["React", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/nngantharaj/Portfolio",
     live: "https://nngantharaj.vercel.app/"
@@ -83,6 +114,14 @@ const ProjectsSection = () => {
                   <p className="text-gray-700 dark:text-gray-300 mb-4">
                     {project.description}
                   </p>
+
+                  {/* Project Note */}
+                  {project.note && project.note !== "#" ? (
+                    <div
+                      className="border border-gray-300 dark:border-gray-400 p-4 rounded-lg text-gray-400 dark:text-gray-500 mb-4 text-sm"
+                      dangerouslySetInnerHTML={{ __html: project.note }}
+                    />
+                  ) : null}
 
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2 mb-4">
