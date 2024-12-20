@@ -118,7 +118,7 @@ const ProjectsSection = () => {
                   {/* Project Note */}
                   {project.note && project.note !== "#" ? (
                     <div
-                      className="border border-gray-300 dark:border-gray-400 p-4 rounded-lg text-gray-400 dark:text-gray-500 mb-4 text-sm"
+                      className="border border-gray-300 dark:border-gray-700 p-4 rounded-lg text-gray-400 dark:text-gray-500 mb-4 text-sm"
                       dangerouslySetInnerHTML={{ __html: project.note }}
                     />
                   ) : null}
