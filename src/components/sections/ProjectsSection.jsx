@@ -13,8 +13,8 @@ const projects = [
       and proceed with online payment. Implemented features like user authentication, product management, and order tracking.`,
     note: `
       <strong>Note:</strong>
-      For the best viewing experience, we recommend accessing this project on a desktop or laptop. The design and layout are 
-      currently not optimized for mobile screens, which may cause misalignment and affect the overall appearance.`,
+      For the best viewing experience, I recommend accessing this project on a desktop or laptop. The design and layout are 
+      not optimized for mobile screens, which may cause misalignment and impact the overall appearance.`,
     technologies: ["Angular", "Json-server"],
     github: "#",
     live: "https://valayal.vercel.app"
