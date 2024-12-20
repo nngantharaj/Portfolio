@@ -37,7 +37,7 @@ const IntroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative"
+      className="min-h-[95vh] flex items-center justify-center relative"
     >
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300" />
