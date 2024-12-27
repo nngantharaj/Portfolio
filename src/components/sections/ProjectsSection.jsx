@@ -9,12 +9,22 @@ const projects = [
     image: "/Valayal.png",
     title: "E-Commerce Platform for a Bangle Store",
     description: `
-      The project involved creating a MEAN-stack E-commerce website where users can browse products, add them to the cart, 
-      and proceed with online payment. Implemented features like user authentication, product management, and order tracking.`,
+      The project involved developing a MEAN-stack E-commerce website with features such as user authentication, product browsing, 
+      cart management, and online payments. It also includes an admin panel, enabling administrators to manage the entire site, including 
+      product listings, user accounts, and order tracking.
+    `,
     note: `
       <strong>Note:</strong>
-      For the best viewing experience, I recommend accessing this project on a desktop or laptop. The design and layout are 
-      not optimized for mobile screens, which may cause misalignment and impact the overall appearance.`,
+      Note: For the best experience, please use a desktop or laptop, as the design is not optimized for mobile screens and may appear 
+      misaligned.<br><br>
+      &ensp;The server may temporarily enter standby mode due to inactivity, causing delays in loading products. If this occurs, wait a minute and 
+      refresh the page periodically. Once products are visible, the system is active.<br><br>
+      &ensp;The website is fully functional for browsing, signing up, logging in, adding items to your cart or wishlist, and more. However, checkout 
+      functionality is currently unavailable.<br><br>
+      To access the admin portal, use these credentials: <br>
+      <strong>Username:</strong> admin <br>
+      <strong>Password:</strong> root
+    `,
     technologies: ["Angular", "Json-server"],
     github: "#",
     live: "https://valayal.vercel.app"
@@ -25,9 +35,10 @@ const projects = [
     description: `
       Built a MERN-stack web application with separate user and admin interfaces. The user interface allows customers 
       to explore plans, subscribe to services, and manage their accounts. The admin interface includes features for managing 
-      users, plans, and tracking subscriptions.`,
+      users, plans, and tracking subscriptions.
+    `,
     note: `
-      <strong>Note:</strong> Login Credentials <br><br>
+      <strong>Note:</strong> Login Credentials: <br>
       <div style="display: flex; max-width: 330px">
         <div style="flex: 1;">
           Admin Credentials:
@@ -44,8 +55,13 @@ const projects = [
           </ul>
         </div>
       </div><br>
-      <strong>Important Note:</strong><br>
-      Do not change the user's password or STB Number in the User or Admin panel to avoid login issues for future users.
+      Please note that the system may enter standby mode after a period of inactivity, potentially causing delays of 50 seconds or more. 
+      To reactivate the server, follow these steps:<br>
+      &ensp;1. Refresh or submit demo captcha once. <br>
+      &ensp;2. Wait a minute, then reload the page periodically. <br>
+      &ensp;3. When the captcha reappears, the server is active, and you may proceed with login. <br><br>
+      <strong>Important Note:</strong>
+      To avoid future login issues, refrain from changing the user's password or STB Number in the User or Admin panel.
     `,
     technologies: ["React", "Node.js", "Express.js", "MongoDB"],
     github: "#",
