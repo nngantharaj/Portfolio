@@ -18,7 +18,7 @@ const projects = [
       Note: For the best experience, please use a desktop or laptop, as the design is not optimized for mobile screens and may appear 
       misaligned.<br><br>
       &ensp;The server may temporarily enter standby mode due to inactivity, causing delays in loading products. If this occurs, wait a minute and 
-      refresh the page periodically. Once products are visible, the system is active.<br><br>
+      refresh the page periodically. Once products are visible, the server is live.<br><br>
       &ensp;The website is fully functional for browsing, signing up, logging in, adding items to your cart or wishlist, and more. However, checkout 
       functionality is currently unavailable.<br><br>
       To access the admin portal, use these credentials: <br>
@@ -59,7 +59,7 @@ const projects = [
       To reactivate the server, follow these steps:<br>
       &ensp;1. Refresh or submit demo captcha once. <br>
       &ensp;2. Wait a minute, then reload the page periodically. <br>
-      &ensp;3. When the captcha reappears, the server is active, and you may proceed with login. <br><br>
+      &ensp;3. When the captcha reappears, the server is live, and you may proceed with login. <br><br>
       <strong>Important Note:</strong>
       To avoid future login issues, refrain from changing the user's password or STB Number in the User or Admin panel.
     `,
